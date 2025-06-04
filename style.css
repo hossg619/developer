@@ -1,0 +1,298 @@
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #4ade80;
+  --primary-dark: #22c55e;
+  --background-dark: #0a0a0a;
+  --background-secondary: #1a1a1a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #06b6d4;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-secondary) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Navigation bar */
+.navbar {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.navbar a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+  background: rgba(74, 222, 128, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Main content container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Contact form styling */
+form {
+  background: var(--background-secondary);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--background-dark);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button styling */
+button {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Back link styling */
+a[href="index.html"]:not(.navbar a) {
+  display: inline-block;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+a[href="index.html"]:not(.navbar a):hover {
+  background: rgba(6, 182, 212, 0.1);
+  transform: translateX(-5px);
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navbar a {
+    margin: 0 0.5rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  form {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+  
+  form {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Hamburger menu (keeping existing functionality) */
+.hamburger {
+  font-size: 24px;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: var(--background-secondary);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container > * {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.container > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.container > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
