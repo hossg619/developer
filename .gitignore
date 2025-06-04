@@ -1,0 +1,6 @@
+# Environment variables (for future API keys, etc.)
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
